@@ -14,6 +14,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'nvie/vim-flake8'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -83,3 +84,6 @@ let g:airline_section_b = airline#section#create(['hunks','branch'])
 "let g:airline_section_z = airline#section#create(['%l', '%c'])
 endfunction
 autocmd VimEnter * call AirlineInit()
+
+let g:flake8_cmd="/usr/local/bin/flake8"
+autocmd BufWritePost *.py call Flake8()
